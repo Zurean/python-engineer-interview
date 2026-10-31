@@ -7,7 +7,7 @@ effort: 3
 status: todo
 confidence: 0
 tags: [python, concurrency, tier1]
-updated: 2026-10-29
+updated: 2026-10-31
 ---
 
 # Asyncio
@@ -21,10 +21,19 @@ updated: 2026-10-29
 - **Конкурентно запустить несколько:** `asyncio.gather(*coros)` или `async with asyncio.TaskGroup() as tg: tg.create_task(...)` (3.11+). TaskGroup — структурная конкурентность: при ошибке в одной задаче остальные отменяются, исключения собираются в `ExceptionGroup`. `gather` по умолчанию при ошибке *не* отменяет остальные.
 - **Отмена:** `task.cancel()` бросает `CancelledError` внутри корутины на ближайшем `await`. Её нельзя глотать — иначе ломаются таймауты и TaskGroup. Если ловишь для cleanup — перебрасывай дальше.
 - **Таймауты:** `async with asyncio.timeout(5):` (3.11+) или `asyncio.wait_for()`.
-- **Блокирующий код в async:** выносить в `await asyncio.to_thread(func)` (I/O-bound, GIL отпускается) или в `ProcessPoolExecutor` через `loop.run_in_executor` (CPU-bound).
+- **Блокирующий код в async:** выносить в `await asyncio.to_thread(func)` (обычно блокирующий I/O) или в `ProcessPoolExecutor` через `loop.run_in_executor` (CPU-bound чистого Python).
 - **Ограничение параллелизма:** `asyncio.Semaphore(50)` + `gather`, либо пул воркеров через `asyncio.Queue`.
 - **Async-библиотеки:** `httpx.AsyncClient`, `aiohttp`, `asyncpg`, SQLAlchemy async, `aiokafka`, `redis.asyncio`. Синхронный `requests` или `psycopg2` в async-коде — классическая ошибка.
 - **Когда asyncio не нужен:** CPU-bound задачи, простые скрипты, код без I/O. Async не ускоряет вычисления, он экономит потоки на ожидании I/O.
+
+## Учебный маршрут
+
+Модуль рассчитан на Python 3.11+ и использует `TaskGroup` и `asyncio.timeout()`. Его удобно пройти за две сессии: сначала части 1–2, затем части 3–4.
+
+1. [[asyncio-mental-model]] — построить модель event loop, корутины, задачи и точки кооперативного переключения.
+2. [[asyncio-tasks-structured-concurrency]] — научиться выбирать между последовательным `await`, `gather` и `TaskGroup`, понимать владение задачами и распространение ошибок.
+3. [[asyncio-cancellation-timeouts]] — рассматривать отмену как часть протокола управления, корректно реализовывать cleanup и таймауты.
+4. [[asyncio-backend-patterns-practice]] — не блокировать loop, ограничивать нагрузку, применять backpressure и закрепить материал на backend-сценарии.
 
 ## Вопросы с собесов
 
