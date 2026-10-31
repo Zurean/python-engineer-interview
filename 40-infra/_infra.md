@@ -11,10 +11,10 @@ updated: 2026-10-29
 
 ## Порядок прохождения (Парето)
 
-1. [[docker]] — Dockerfile для Python, слои, multi-stage, compose. Вечер.
-2. [[kubernetes]] — Deployment/Service/Ingress/ConfigMap/Secret, probes, ресурсы, как читать логи. Два вечера.
-3. [[observability]] — структурные логи, метрики, трейсинг, Sentry. Уровень 2, но спрашивают в 4/7.
-4. [[ci-cd]] — пайплайн: lint → test → build → deploy. Уровень 2.
+1. [docker](docker.md) — Dockerfile для Python, слои, multi-stage, compose. Вечер.
+2. [kubernetes](kubernetes.md) — Deployment/Service/Ingress/ConfigMap/Secret, probes, ресурсы, как читать логи. Два вечера.
+3. [observability](observability.md) — структурные логи, метрики, трейсинг, Sentry. Уровень 2, но спрашивают в 4/7.
+4. [ci-cd](ci-cd.md) — пайплайн: lint → test → build → deploy. Уровень 2.
 
 ## Подтемы
 
@@ -23,8 +23,8 @@ TABLE WITHOUT ID file.link AS "Тема", tier AS "Ур.", impact AS "Импак
 FROM "40-infra" WHERE type = "topic" SORT tier ASC, impact DESC
 ```
 
-Без Dataview: [[docker]] · [[kubernetes]] · [[observability]] · [[ci-cd]]
+Без Dataview: [docker](docker.md) · [kubernetes](kubernetes.md) · [observability](observability.md) · [ci-cd](ci-cd.md)
 
 ## Практика
 
-Всё это закрывается одним прогоном [[rag-service-project]]: Dockerfile → compose → kind/k3s → GitHub Actions → Prometheus/Grafana/Sentry.
+Всё это закрывается одним прогоном [rag-service-project](../capstone/rag-service-project.md): Dockerfile → compose → kind/k3s → GitHub Actions → Prometheus/Grafana/Sentry.

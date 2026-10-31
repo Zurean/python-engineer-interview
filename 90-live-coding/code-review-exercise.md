@@ -18,7 +18,7 @@ updated: 2026-10-29
 
 **Порядок, в котором смотреть PR (и проговаривать):**
 1. Корректность и граничные случаи: гонки, ошибки, None, пустые коллекции, таймауты.
-2. Безопасность: инъекции, секреты, доступ ([[auth-security]]).
+2. Безопасность: инъекции, секреты, доступ ([auth-security](../30-backend-design/auth-security.md)).
 3. Производительность там, где она важна: N+1, блокировка loop, лишние запросы.
 4. Тесты: есть ли, проверяют ли поведение, покрыты ли edge cases.
 5. Читаемость и дизайн: имена, размер функций, соответствие слоям.
@@ -49,7 +49,7 @@ updated: 2026-10-29
 
 - [ ] Упражнение 1 пройдено
 - [ ] Упражнение 2 пройдено
-- [ ] Упражнение 3 пройдено (код, сгенерированный AI-ассистентом, — найти его типичные ошибки, см. [[ai-assisted-development]])
+- [ ] Упражнение 3 пройдено (код, сгенерированный AI-ассистентом, — найти его типичные ошибки, см. [ai-assisted-development](../70-llm-engineering/ai-assisted-development.md))
 
 ## Вопросы с собесов
 
@@ -65,7 +65,7 @@ updated: 2026-10-29
 
 ## Связи
 
-[[python-live-coding-tasks]] · [[architecture-layers]] · [[ai-assisted-development]] · [[pytest]]
+[python-live-coding-tasks](python-live-coding-tasks.md) · [architecture-layers](../30-backend-design/architecture-layers.md) · [ai-assisted-development](../70-llm-engineering/ai-assisted-development.md) · [pytest](../60-testing/pytest.md)
 
 ## Мои заметки
 

@@ -23,7 +23,7 @@ updated: 2026-10-29
 - **Структура проекта:** `src/`-layout, `tests/` рядом, `pyproject.toml`, `Dockerfile`, `Makefile`/`justfile` или `uv run` скрипты, `.env.example`.
 - **Конфигурация:** pydantic-settings из env, никаких секретов в репо, 12-factor.
 - **Версии Python:** поддержка актуальных (3.12/3.13), `requires-python`.
-- **CI:** линт + типы + тесты на каждый PR ([[ci-cd]]).
+- **CI:** линт + типы + тесты на каждый PR ([ci-cd](../40-infra/ci-cd.md)).
 
 ## Вопросы с собесов
 
@@ -38,7 +38,7 @@ updated: 2026-10-29
 
 - Сборка пакетов: `hatchling`/`setuptools`, wheels, публикация в приватный индекс.
 - Монорепо с несколькими сервисами на uv workspaces.
-- Reproducible Docker-сборки с uv (`uv sync --frozen`, кэш слоёв) — см. [[docker]].
+- Reproducible Docker-сборки с uv (`uv sync --frozen`, кэш слоёв) — см. [docker](../40-infra/docker.md).
 - Semantic versioning, changelog, conventional commits.
 
 ## Ресурсы
@@ -48,7 +48,7 @@ updated: 2026-10-29
 
 ## Связи
 
-[[typing]] · [[ci-cd]] · [[docker]] · [[pytest]]
+[typing](typing.md) · [ci-cd](../40-infra/ci-cd.md) · [docker](../40-infra/docker.md) · [pytest](../60-testing/pytest.md)
 
 ## Мои заметки
 

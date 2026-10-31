@@ -24,8 +24,8 @@ updated: 2026-10-29
 - **OWASP Top 10, что уметь назвать:** инъекции (SQL — только параметризованные запросы; ORM защищает, `text()` с f-string — нет), broken access control (IDOR), сломанная аутентификация, SSRF (валидация URL, запрет внутренних адресов), небезопасная десериализация (`pickle` из недоверенного источника), XSS (экранирование, CSP — если отдаёте HTML), CSRF (для cookie-сессий — токен/SameSite), утечки через логи и ошибки.
 - **Секреты:** env/secret manager (Vault, K8s Secrets с шифрованием), ротация, никогда в репозитории; `.env` в `.gitignore`; сканирование секретов в pre-commit/CI.
 - **Транспорт:** TLS везде, HSTS, безопасные cookie (`HttpOnly`, `Secure`, `SameSite`).
-- **Валидация входа** на границе (Pydantic), ограничение размера тела, таймауты, rate limiting ([[redis]]).
-- **Зависимости:** `pip-audit`/dependabot, минимальный Docker-образ, не root в контейнере ([[docker]]).
+- **Валидация входа** на границе (Pydantic), ограничение размера тела, таймауты, rate limiting ([redis](../50-messaging-caching/redis.md)).
+- **Зависимости:** `pip-audit`/dependabot, минимальный Docker-образ, не root в контейнере ([docker](../40-infra/docker.md)).
 - **Логи и PII:** не логировать токены, пароли, карты; маскирование.
 
 ## Вопросы с собесов
@@ -56,7 +56,7 @@ updated: 2026-10-29
 
 ## Связи
 
-[[api-design]] · [[fastapi]] · [[redis]] · [[docker]] · [[observability]]
+[api-design](api-design.md) · [fastapi](fastapi.md) · [redis](../50-messaging-caching/redis.md) · [docker](../40-infra/docker.md) · [observability](../40-infra/observability.md)
 
 ## Мои заметки
 

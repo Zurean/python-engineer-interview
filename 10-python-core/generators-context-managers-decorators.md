@@ -56,7 +56,7 @@ updated: 2026-10-29
 - Генераторы как корутины до asyncio (PEP 342, 380) — откуда растут ноги async/await.
 - `itertools` всерьёз: `chain`, `groupby` (требует сортировки), `islice`, `tee`, `accumulate`, `batched` (3.12).
 - `contextlib.suppress`, `closing`, `nullcontext`, `aclosing`.
-- Декораторы с состоянием через класс, `ParamSpec` для корректной типизации декораторов ([[typing]]).
+- Декораторы с состоянием через класс, `ParamSpec` для корректной типизации декораторов ([typing](typing.md)).
 - Генераторы и `finally`: когда выполняется cleanup при `close()` / сборке мусора.
 
 ## Ресурсы
@@ -66,7 +66,7 @@ updated: 2026-10-29
 
 ## Связи
 
-[[data-model]] · [[asyncio]] · [[typing]] · [[python-live-coding-tasks]]
+[data-model](data-model.md) · [asyncio](asyncio.md) · [typing](typing.md) · [python-live-coding-tasks](../90-live-coding/python-live-coding-tasks.md)
 
 ## Мои заметки
 

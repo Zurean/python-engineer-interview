@@ -11,9 +11,9 @@ updated: 2026-10-29
 
 ## Порядок прохождения
 
-1. [[kafka]] — модель, consumer groups, гарантии, ретраи, лаг.
-2. [[redis]] — структуры, кэш и инвалидация, локи, rate limiting, pub/sub.
-3. [[task-queues]] — Celery/Taskiq/arq: фоновые задачи, отличие от брокера событий.
+1. [kafka](kafka.md) — модель, consumer groups, гарантии, ретраи, лаг.
+2. [redis](redis.md) — структуры, кэш и инвалидация, локи, rate limiting, pub/sub.
+3. [task-queues](task-queues.md) — Celery/Taskiq/arq: фоновые задачи, отличие от брокера событий.
 
 ## Подтемы
 
@@ -22,4 +22,4 @@ TABLE WITHOUT ID file.link AS "Тема", impact AS "Импакт", effort AS "�
 FROM "50-messaging-caching" WHERE type = "topic" SORT impact DESC
 ```
 
-Без Dataview: [[kafka]] · [[redis]] · [[task-queues]]
+Без Dataview: [kafka](kafka.md) · [redis](redis.md) · [task-queues](task-queues.md)

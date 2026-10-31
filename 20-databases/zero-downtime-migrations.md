@@ -52,7 +52,7 @@ updated: 2026-10-29
 
 ## Связи
 
-[[transactions-isolation-locks]] · [[sqlalchemy-alembic]] · [[ci-cd]] · [[kubernetes]]
+[transactions-isolation-locks](transactions-isolation-locks.md) · [sqlalchemy-alembic](sqlalchemy-alembic.md) · [ci-cd](../40-infra/ci-cd.md) · [kubernetes](../40-infra/kubernetes.md)
 
 ## Мои заметки
 

@@ -25,7 +25,7 @@ updated: 2026-10-29
 - **Retention** по времени/размеру, compacted topics (последнее значение по ключу — для состояния).
 - **Kafka vs RabbitMQ:** Kafka — лог с replay, высокий throughput, порядок по ключу, много консюмеров одного потока; RabbitMQ — очередь с ack per message, роутинг (exchanges), приоритеты, проще для task-очередей. Redis Streams / NATS — лёгкие альтернативы.
 - **Python:** `aiokafka` (async), `confluent-kafka` (librdkafka, быстрый, sync), `faststream` (фреймворк над брокерами).
-- **Паттерны:** transactional outbox (из [[resilience-patterns]]), CDC (Debezium), event-carried state transfer, партиционирование по tenant/user для порядка.
+- **Паттерны:** transactional outbox (из [resilience-patterns](../30-backend-design/resilience-patterns.md)), CDC (Debezium), event-carried state transfer, партиционирование по tenant/user для порядка.
 - **Схемы и совместимость:** backward/forward compatible изменения событий, Schema Registry.
 
 ## Вопросы с собесов
@@ -47,7 +47,7 @@ updated: 2026-10-29
 - Kafka Streams / ksqlDB, stateful processing, windowing (обзорно).
 - Транзакции Kafka в деталях (`transactional.id`, zombie fencing).
 - Cooperative rebalancing, static membership, `max.poll.interval.ms` и «consumer kicked out».
-- Тестирование консюмеров ([[integration-testing]]), локальная Kafka в compose (redpanda как лёгкая замена).
+- Тестирование консюмеров ([integration-testing](../60-testing/integration-testing.md)), локальная Kafka в compose (redpanda как лёгкая замена).
 
 ## Ресурсы
 
@@ -58,7 +58,7 @@ updated: 2026-10-29
 
 ## Связи
 
-[[resilience-patterns]] · [[task-queues]] · [[sd-building-blocks]] · [[integration-testing]] · [[observability]]
+[resilience-patterns](../30-backend-design/resilience-patterns.md) · [task-queues](task-queues.md) · [sd-building-blocks](../80-system-design/sd-building-blocks.md) · [integration-testing](../60-testing/integration-testing.md) · [observability](../40-infra/observability.md)
 
 ## Мои заметки
 

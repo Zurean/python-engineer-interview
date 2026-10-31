@@ -21,8 +21,8 @@ updated: 2026-10-29
 - **Выбирать только нужные колонки**, не `SELECT *` (особенно с jsonb/text).
 - **Батчинг записи:** multi-row INSERT, `COPY`, `executemany`, upsert; транзакция вокруг батча.
 - **Агрегации и аналитика — в БД**, не в Python: `GROUP BY`, window functions, CTE. Перенос фильтрации/сортировки в SQL.
-- **Индексы под реальные запросы** ([[postgres-indexes-explain]]): смотреть `pg_stat_statements`, искать top по total_time.
-- **Кэширование** горячих чтений в Redis с TTL/инвалидацией ([[redis]]); materialized views для тяжёлых отчётов.
+- **Индексы под реальные запросы** ([postgres-indexes-explain](postgres-indexes-explain.md)): смотреть `pg_stat_statements`, искать top по total_time.
+- **Кэширование** горячих чтений в Redis с TTL/инвалидацией ([redis](../50-messaging-caching/redis.md)); materialized views для тяжёлых отчётов.
 - **Соединения:** пул, не открывать соединение на запрос; `PgBouncer` в transaction-mode (ограничения: нет prepared statements/`SET`/advisory locks в session-семантике).
 - **Антипаттерны:** `OR` вместо `IN`, функции над индексируемыми колонками, `NOT IN` с NULL, `DISTINCT` для маскировки плохого JOIN, `SELECT ... FOR UPDATE` всей таблицы, long transactions.
 - **Таймауты** на запросы (`statement_timeout`) — защита от одного плохого запроса, кладущего базу.
@@ -55,7 +55,7 @@ updated: 2026-10-29
 
 ## Связи
 
-[[postgres-indexes-explain]] · [[sqlalchemy-alembic]] · [[redis]] · [[memory-performance]] · [[sd-building-blocks]]
+[postgres-indexes-explain](postgres-indexes-explain.md) · [sqlalchemy-alembic](sqlalchemy-alembic.md) · [redis](../50-messaging-caching/redis.md) · [memory-performance](../10-python-core/memory-performance.md) · [sd-building-blocks](../80-system-design/sd-building-blocks.md)
 
 ## Мои заметки
 

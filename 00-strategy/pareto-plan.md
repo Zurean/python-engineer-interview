@@ -12,9 +12,9 @@ updated: 2026-10-29
 
 Делается до любой технической подготовки, потому что влияет на *каждый* собес.
 
-1. [[self-presentation]] — рассказ о себе на 2 минуты, с честной формулировкой стажа и позиционированием.
-2. [[stories]] — две-три истории по STAR из своего опыта (инцидент, AI-кейс, смена стека).
-3. [[interview-formats]] — понять, какие секции бывают, чтобы не удивляться.
+1. [self-presentation](self-presentation.md) — рассказ о себе на 2 минуты, с честной формулировкой стажа и позиционированием.
+2. [stories](stories.md) — две-три истории по STAR из своего опыта (инцидент, AI-кейс, смена стека).
+3. [interview-formats](interview-formats.md) — понять, какие секции бывают, чтобы не удивляться.
 
 ## Фаза 1 — первый фильтр (2–3 недели)
 
@@ -22,16 +22,16 @@ updated: 2026-10-29
 
 | Порядок | Тема | Почему первой |
 |---|---|---|
-| 1 | [[asyncio]] | Главный фильтр для FastAPI-вакансий. 5 из 7 требуют async. Тема компактная, вопросы типовые. |
-| 2 | [[data-model]] + [[generators-context-managers-decorators]] | Классика скрининга: мутабельный дефолт, `__slots__`, дескрипторы, генераторы. Готовится за пару вечеров. |
-| 3 | [[postgres-indexes-explain]] | БД — требование №1 после Python. Индексы и EXPLAIN спрашивают всегда. |
-| 4 | [[transactions-isolation-locks]] | Уровни изоляции, deadlock, SELECT FOR UPDATE — стабильный набор вопросов. |
-| 5 | [[gil-threads-processes]] | Вопрос про GIL задают в 90 % случаев. Ответ короткий, учится за час. |
-| 6 | [[fastapi]] + [[sqlalchemy-alembic]] | Стек из вакансий. Вопросы про `def` vs `async def`, сессии, N+1. |
-| 7 | [[pytest]] | Спрашивают почти всегда, тема дешёвая. |
-| 8 | [[docker]] | Dockerfile, слои, multi-stage, compose — 30 минут, но спрашивают. |
+| 1 | [asyncio](../10-python-core/asyncio.md) | Главный фильтр для FastAPI-вакансий. 5 из 7 требуют async. Тема компактная, вопросы типовые. |
+| 2 | [data-model](../10-python-core/data-model.md) + [generators-context-managers-decorators](../10-python-core/generators-context-managers-decorators.md) | Классика скрининга: мутабельный дефолт, `__slots__`, дескрипторы, генераторы. Готовится за пару вечеров. |
+| 3 | [postgres-indexes-explain](../20-databases/postgres-indexes-explain.md) | БД — требование №1 после Python. Индексы и EXPLAIN спрашивают всегда. |
+| 4 | [transactions-isolation-locks](../20-databases/transactions-isolation-locks.md) | Уровни изоляции, deadlock, SELECT FOR UPDATE — стабильный набор вопросов. |
+| 5 | [gil-threads-processes](../10-python-core/gil-threads-processes.md) | Вопрос про GIL задают в 90 % случаев. Ответ короткий, учится за час. |
+| 6 | [fastapi](../30-backend-design/fastapi.md) + [sqlalchemy-alembic](../20-databases/sqlalchemy-alembic.md) | Стек из вакансий. Вопросы про `def` vs `async def`, сессии, N+1. |
+| 7 | [pytest](../60-testing/pytest.md) | Спрашивают почти всегда, тема дешёвая. |
+| 8 | [docker](../40-infra/docker.md) | Dockerfile, слои, multi-stage, compose — 30 минут, но спрашивают. |
 
-Критерий: пройти [[python-live-coding-tasks]] без подглядывания.
+Критерий: пройти [python-live-coding-tasks](../90-live-coding/python-live-coding-tasks.md) без подглядывания.
 
 ## Фаза 2 — Middle+/Senior-секции (3–4 недели)
 
@@ -39,27 +39,27 @@ updated: 2026-10-29
 
 | Порядок | Тема |
 |---|---|
-| 1 | [[sd-framework]] — фреймворк ответа на системный дизайн; без него секция провальна независимо от знаний |
-| 2 | [[resilience-patterns]] — таймауты, ретраи, идемпотентность, circuit breaker |
-| 3 | [[kafka]] — consumer groups, гарантии доставки, ретраи |
-| 4 | [[redis]] — кэш, инвалидация, локи, rate limiting |
-| 5 | [[sd-building-blocks]] + [[sd-practice-cases]] — 3–4 кейса вслух |
-| 6 | [[api-design]] + [[architecture-layers]] |
-| 7 | [[kubernetes]] — на уровне пользователя |
-| 8 | [[integration-testing]], [[ci-cd]], [[observability]] |
-| 9 | [[typing]], [[memory-performance]], [[tooling]] |
+| 1 | [sd-framework](../80-system-design/sd-framework.md) — фреймворк ответа на системный дизайн; без него секция провальна независимо от знаний |
+| 2 | [resilience-patterns](../30-backend-design/resilience-patterns.md) — таймауты, ретраи, идемпотентность, circuit breaker |
+| 3 | [kafka](../50-messaging-caching/kafka.md) — consumer groups, гарантии доставки, ретраи |
+| 4 | [redis](../50-messaging-caching/redis.md) — кэш, инвалидация, локи, rate limiting |
+| 5 | [sd-building-blocks](../80-system-design/sd-building-blocks.md) + [sd-practice-cases](../80-system-design/sd-practice-cases.md) — 3–4 кейса вслух |
+| 6 | [api-design](../30-backend-design/api-design.md) + [architecture-layers](../30-backend-design/architecture-layers.md) |
+| 7 | [kubernetes](../40-infra/kubernetes.md) — на уровне пользователя |
+| 8 | [integration-testing](../60-testing/integration-testing.md), [ci-cd](../40-infra/ci-cd.md), [observability](../40-infra/observability.md) |
+| 9 | [typing](../10-python-core/typing.md), [memory-performance](../10-python-core/memory-performance.md), [tooling](../10-python-core/tooling.md) |
 
 ## Фаза 3 — дифференциатор (параллельно с фазой 2)
 
-[[_llm-engineering]]: [[rag]], [[tool-calling-structured-output]], [[evals-cost-latency]], [[ai-assisted-development]]. Это то, что отличает от других Middle+ кандидатов и открывает AI-позиции. Лучше всего качается через [[rag-service-project]].
+[_llm-engineering](../70-llm-engineering/_llm-engineering.md): [rag](../70-llm-engineering/rag.md), [tool-calling-structured-output](../70-llm-engineering/tool-calling-structured-output.md), [evals-cost-latency](../70-llm-engineering/evals-cost-latency.md), [ai-assisted-development](../70-llm-engineering/ai-assisted-development.md). Это то, что отличает от других Middle+ кандидатов и открывает AI-позиции. Лучше всего качается через [rag-service-project](../capstone/rag-service-project.md).
 
 ## Фаза 4 — гринд (бесконечная)
 
-Разделы «Углубление» во всех темах уровня 1, [[_optional]], CPython-внутренности, [[algorithms-basics]] глубже. Сюда — только когда фазы 1–2 закрыты на `confidence: 2`.
+Разделы «Углубление» во всех темах уровня 1, [_optional](../95-optional/_optional.md), CPython-внутренности, [algorithms-basics](../90-live-coding/algorithms-basics.md) глубже. Сюда — только когда фазы 1–2 закрыты на `confidence: 2`.
 
 ## Правило выбора темы на сегодня
 
 1. Есть ли незакрытые темы фазы 1? → берём верхнюю.
 2. Нет → фаза 2, верхняя незакрытая.
 3. После каждого реального собеса — провалившаяся тема прыгает в начало очереди, независимо от фазы.
-4. Если не хочется ничего из списка — делаем [[rag-service-project]]: он прокачивает всё сразу.
+4. Если не хочется ничего из списка — делаем [rag-service-project](../capstone/rag-service-project.md): он прокачивает всё сразу.

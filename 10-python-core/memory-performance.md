@@ -23,10 +23,10 @@ updated: 2026-10-29
 - `__slots__`, генераторы вместо списков, `array`/numpy для числовых массивов — способы снизить память.
 
 **Производительность — алгоритм диагностики**
-1. Измерить, не гадать: метрики (p50/p95/p99 latency, RPS, CPU, RSS), трейсы ([[observability]]).
+1. Измерить, не гадать: метрики (p50/p95/p99 latency, RPS, CPU, RSS), трейсы ([observability](../40-infra/observability.md)).
 2. Локализовать: где время — в БД, во внешнем API, в CPU, в ожидании lock/loop?
 3. Профилировать: `cProfile` + `snakeviz` локально; **`py-spy`** (sampling, можно на живой процесс в проде, `py-spy dump` для «что он сейчас делает»); `scalene`; для async — `py-spy` тоже видит.
-4. Типовые находки: N+1 ([[query-optimization-n-plus-1]]), отсутствие индекса, блокирующий вызов в event loop ([[asyncio]]), сериализация больших JSON, логирование в hot path, регулярки, лишние копии.
+4. Типовые находки: N+1 ([query-optimization-n-plus-1](../20-databases/query-optimization-n-plus-1.md)), отсутствие индекса, блокирующий вызов в event loop ([asyncio](asyncio.md)), сериализация больших JSON, логирование в hot path, регулярки, лишние копии.
 5. Фикс + повторное измерение. Бенчмарк через `timeit`/`pytest-benchmark`.
 
 **Что ускоряет Python-код**
@@ -61,7 +61,7 @@ updated: 2026-10-29
 
 ## Связи
 
-[[gil-threads-processes]] · [[query-optimization-n-plus-1]] · [[observability]] · [[redis]]
+[gil-threads-processes](gil-threads-processes.md) · [query-optimization-n-plus-1](../20-databases/query-optimization-n-plus-1.md) · [observability](../40-infra/observability.md) · [redis](../50-messaging-caching/redis.md)
 
 ## Мои заметки
 

@@ -36,7 +36,7 @@ updated: 2026-10-29
 
 ## Связи
 
-[[rag]] · [[evals-cost-latency]] · [[vector-dbs]]
+[rag](../70-llm-engineering/rag.md) · [evals-cost-latency](../70-llm-engineering/evals-cost-latency.md) · [vector-dbs](vector-dbs.md)
 
 ## Мои заметки
 

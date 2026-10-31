@@ -11,8 +11,8 @@ updated: 2026-10-29
 
 ## Порядок прохождения
 
-1. [[pytest]] — фикстуры, параметризация, моки, async-тесты, тестирование FastAPI.
-2. [[integration-testing]] — реальная БД в тестах, testcontainers, стратегия пирамиды.
+1. [pytest](pytest.md) — фикстуры, параметризация, моки, async-тесты, тестирование FastAPI.
+2. [integration-testing](integration-testing.md) — реальная БД в тестах, testcontainers, стратегия пирамиды.
 
 ## Подтемы
 
@@ -21,4 +21,4 @@ TABLE WITHOUT ID file.link AS "Тема", impact AS "Импакт", effort AS "�
 FROM "60-testing" WHERE type = "topic" SORT impact DESC, effort ASC
 ```
 
-Без Dataview: [[pytest]] · [[integration-testing]]
+Без Dataview: [pytest](pytest.md) · [integration-testing](integration-testing.md)

@@ -11,9 +11,9 @@ updated: 2026-10-29
 
 ## Порядок прохождения
 
-1. [[python-live-coding-tasks]] — все скрининговые вопросы и задачи «напиши на доске» одним списком. Прогнать без подглядывания.
-2. [[code-review-exercise]] — упражнение на ревью с типовыми багами. Спрашивают в Циане и везде, где есть AI-инструменты.
-3. [[algorithms-basics]] — минимальная алгоритмическая база: структуры данных, сложность, 30–50 типовых задач.
+1. [python-live-coding-tasks](python-live-coding-tasks.md) — все скрининговые вопросы и задачи «напиши на доске» одним списком. Прогнать без подглядывания.
+2. [code-review-exercise](code-review-exercise.md) — упражнение на ревью с типовыми багами. Спрашивают в Циане и везде, где есть AI-инструменты.
+3. [algorithms-basics](algorithms-basics.md) — минимальная алгоритмическая база: структуры данных, сложность, 30–50 типовых задач.
 
 ## Подтемы
 
@@ -22,7 +22,7 @@ TABLE WITHOUT ID file.link AS "Тема", impact AS "Импакт", effort AS "�
 FROM "90-live-coding" WHERE type = "topic" SORT impact DESC
 ```
 
-Без Dataview: [[python-live-coding-tasks]] · [[code-review-exercise]] · [[algorithms-basics]]
+Без Dataview: [python-live-coding-tasks](python-live-coding-tasks.md) · [code-review-exercise](code-review-exercise.md) · [algorithms-basics](algorithms-basics.md)
 
 ## Правила поведения на live coding
 

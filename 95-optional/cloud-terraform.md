@@ -36,7 +36,7 @@ updated: 2026-10-29
 
 ## Связи
 
-[[kubernetes]] · [[ci-cd]] · [[target-profile]]
+[kubernetes](../40-infra/kubernetes.md) · [ci-cd](../40-infra/ci-cd.md) · [target-profile](../00-strategy/target-profile.md)
 
 ## Мои заметки
 

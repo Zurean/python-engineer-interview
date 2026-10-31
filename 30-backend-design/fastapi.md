@@ -21,8 +21,8 @@ updated: 2026-10-29
 - **Dependency Injection:** `Depends()` — функции/генераторы с `yield` (cleanup после ответа), кэширование в рамках запроса, `Annotated[Session, Depends(get_session)]`, переопределение в тестах через `app.dependency_overrides`.
 - **Валидация:** Pydantic-модели для body, `Query/Path/Header` для параметров, `response_model` фильтрует вывод, 422 при ошибке валидации. Граница валидации — здесь.
 - **Lifespan:** `@asynccontextmanager async def lifespan(app)` — создать engine, http-клиент, consumer при старте, закрыть при остановке. Не глобалы на импорте.
-- **Middleware** (CORS, request id, логирование, таймауты), `BackgroundTasks` (для лёгких задач; для тяжёлых — очередь, см. [[task-queues]]).
-- **Ошибки:** `HTTPException`, `exception_handler` для доменных ошибок → единый формат ответа ([[api-design]]).
+- **Middleware** (CORS, request id, логирование, таймауты), `BackgroundTasks` (для лёгких задач; для тяжёлых — очередь, см. [task-queues](../50-messaging-caching/task-queues.md)).
+- **Ошибки:** `HTTPException`, `exception_handler` для доменных ошибок → единый формат ответа ([api-design](api-design.md)).
 - **Роутеры** (`APIRouter`), версионирование через префиксы, OpenAPI из коробки.
 - **Производительность:** один `httpx.AsyncClient` на приложение, пул БД, `orjson`-ответы, не логировать тела запросов в hot path, настроить количество воркеров ≈ CPU.
 - **Django-отличия** (если спросят): монолит с батарейками (ORM, admin, auth, миграции), sync-first, Django ORM vs SQLAlchemy, DRF vs FastAPI; async в Django ограничен ORM.
@@ -33,7 +33,7 @@ updated: 2026-10-29
 - [ ] Что такое ASGI и чем отличается от WSGI? → *async-интерфейс; scope/receive/send; websockets*
 - [ ] Как работает `Depends`, что такое dependency с `yield`? → *DI-граф, cleanup, кэш в рамках запроса*
 - [ ] Где создаёшь engine/клиенты и почему не на уровне модуля? → *lifespan; тесты, порядок инициализации, форки*
-- [ ] Как тестируешь FastAPI-приложение? → *TestClient/httpx ASGITransport, dependency_overrides, см. [[pytest]]*
+- [ ] Как тестируешь FastAPI-приложение? → *TestClient/httpx ASGITransport, dependency_overrides, см. [pytest](../60-testing/pytest.md)*
 - [ ] Как сделать единый формат ошибок? → *exception handlers, доменные исключения → HTTP-коды*
 - [ ] Сколько воркеров uvicorn ставить и зачем gunicorn? → *≈CPU, процесс-менеджер, обход GIL*
 - [ ] Как прокинуть request id через все логи? → *middleware + contextvars*
@@ -46,7 +46,7 @@ updated: 2026-10-29
 - Pydantic v2 в FastAPI: `model_config`, `computed_field`, `TypeAdapter`, производительность сериализации.
 - Зависимости с областью видимости приложения (singleton) и альтернативные DI-контейнеры (dishka, punq).
 - Graceful shutdown: завершение in-flight запросов, таймауты uvicorn, readiness probe в K8s.
-- Rate limiting и защита API (см. [[redis]], [[auth-security]]).
+- Rate limiting и защита API (см. [redis](../50-messaging-caching/redis.md), [auth-security](auth-security.md)).
 - Litestar/BlackSheep как альтернативы — трейдоффы.
 
 ## Ресурсы
@@ -57,7 +57,7 @@ updated: 2026-10-29
 
 ## Связи
 
-[[asyncio]] · [[sqlalchemy-alembic]] · [[typing]] · [[api-design]] · [[pytest]] · [[architecture-layers]]
+[asyncio](../10-python-core/asyncio.md) · [sqlalchemy-alembic](../20-databases/sqlalchemy-alembic.md) · [typing](../10-python-core/typing.md) · [api-design](api-design.md) · [pytest](../60-testing/pytest.md) · [architecture-layers](architecture-layers.md)
 
 ## Мои заметки
 

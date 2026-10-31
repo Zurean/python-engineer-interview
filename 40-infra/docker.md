@@ -56,7 +56,7 @@ updated: 2026-10-29
 
 ## Связи
 
-[[kubernetes]] · [[ci-cd]] · [[tooling]] · [[integration-testing]] · [[rag-service-project]]
+[kubernetes](kubernetes.md) · [ci-cd](ci-cd.md) · [tooling](../10-python-core/tooling.md) · [integration-testing](../60-testing/integration-testing.md) · [rag-service-project](../capstone/rag-service-project.md)
 
 ## Мои заметки
 

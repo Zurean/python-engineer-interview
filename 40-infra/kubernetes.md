@@ -19,12 +19,12 @@ updated: 2026-10-29
 - **Объекты:** Pod (один+ контейнер, эфемерный), Deployment (управляет ReplicaSet → Pod-ами, rolling update), Service (стабильный адрес и балансировка: ClusterIP/NodePort/LoadBalancer), Ingress (HTTP-роутинг снаружи), ConfigMap/Secret (конфигурация → env или файлы), Namespace, Job/CronJob (миграции, периодические задачи), StatefulSet (БД, брокеры — обычно не ваше дело), HPA (автомасштабирование по CPU/метрикам).
 - **Probes:** liveness (перезапустить, если завис), readiness (убрать из Service, если не готов — БД недоступна, прогрев), startup (для медленного старта). Неправильные probes = каскадные перезапуски.
 - **Ресурсы:** `requests` (для планирования) и `limits` (CPU throttling, OOMKill по памяти). Python-сервис: память растёт — ставить limit с запасом, следить за RSS.
-- **Rolling update:** `maxSurge`/`maxUnavailable`, новая версия поднимается рядом со старой → схема БД должна быть совместима с обеими ([[zero-downtime-migrations]]). Graceful shutdown: SIGTERM → `terminationGracePeriodSeconds` → приложение дорабатывает in-flight запросы; `preStop` hook.
+- **Rolling update:** `maxSurge`/`maxUnavailable`, новая версия поднимается рядом со старой → схема БД должна быть совместима с обеими ([zero-downtime-migrations](../20-databases/zero-downtime-migrations.md)). Graceful shutdown: SIGTERM → `terminationGracePeriodSeconds` → приложение дорабатывает in-flight запросы; `preStop` hook.
 - **Конфигурация и секреты:** env из ConfigMap/Secret; секреты — не в git в открытом виде (sealed-secrets, external-secrets, Vault).
 - **Миграции при деплое:** Job или init-container, один раз, до раскатки Deployment; не из каждого пода.
 - **Отладка:** `kubectl get pods`, `describe pod` (events: ImagePullBackOff, OOMKilled, probe failed), `logs -f --previous`, `exec -it`, `port-forward`, `top pods`. CrashLoopBackOff → смотреть логи предыдущего контейнера.
 - **Helm / Kustomize:** шаблонизация манифестов; values для окружений. Знать, что это, уметь прочитать chart.
-- **Логи и метрики:** stdout → сборщик (Loki/ELK); `/metrics` → Prometheus через ServiceMonitor ([[observability]]).
+- **Логи и метрики:** stdout → сборщик (Loki/ELK); `/metrics` → Prometheus через ServiceMonitor ([observability](observability.md)).
 - **Сеть на пальцах:** Pod получает IP, Service — виртуальный IP + DNS (`svc.namespace.svc.cluster.local`), Ingress-контроллер (nginx/traefik) терминирует HTTP.
 
 ## Вопросы с собесов
@@ -57,7 +57,7 @@ updated: 2026-10-29
 
 ## Связи
 
-[[docker]] · [[ci-cd]] · [[observability]] · [[zero-downtime-migrations]] · [[resilience-patterns]] · [[rag-service-project]]
+[docker](docker.md) · [ci-cd](ci-cd.md) · [observability](observability.md) · [zero-downtime-migrations](../20-databases/zero-downtime-migrations.md) · [resilience-patterns](../30-backend-design/resilience-patterns.md) · [rag-service-project](../capstone/rag-service-project.md)
 
 ## Мои заметки
 

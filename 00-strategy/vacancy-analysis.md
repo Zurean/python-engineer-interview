@@ -12,24 +12,24 @@ updated: 2026-10-29
 
 | Навык | Из 7 | Где | Заметки |
 |---|---|---|---|
-| Python | 7 | все | [[_python-core]] |
-| PostgreSQL / SQL | 6 | все, кроме Constructor | [[_databases]] |
-| Проектирование: микросервисы, архитектура | 6 | все, кроме 1440 | [[_system-design]], [[architecture-layers]] |
-| Async: FastAPI, aiohttp, asyncio | 5 | Альфа, X5, Циан, Банк, 1440 | [[asyncio]], [[fastapi]] |
-| Kubernetes | 5 | Альфа, X5, Циан, Constructor, 1440 | [[kubernetes]] |
-| Docker | 5 | Альфа, Циан, Банк, 1440, X5 | [[docker]] |
-| Kafka / RabbitMQ | 4 | Альфа, X5, Циан, Банк | [[kafka]] |
-| SQLAlchemy / Alembic | 4 | Альфа, X5, Циан, Банк | [[sqlalchemy-alembic]] |
-| Тесты (unit + интеграционные) | 4 | X5, Циан, Банк, 1440 | [[_testing]] |
-| Observability | 4 | Циан, Банк, Constructor, Магнит | [[observability]] |
-| AI-инструменты в разработке | 3 | Циан (спрашивают на собесе), Банк (выдают Claude Code), Constructor | [[ai-assisted-development]] |
-| Redis | 3 | Альфа, Банк, 1440 | [[redis]] |
-| CI/CD | 3 | X5, Циан (Jenkins), Банк | [[ci-cd]] |
-| Оптимизация БД и производительности | 3 | X5, Циан, 1440 | [[query-optimization-n-plus-1]], [[memory-performance]] |
-| LLM: RAG, tool calling, structured output | 2 + 2 рядом | Магнит, 1440; Альфа и Constructor — «понимать ML» | [[_llm-engineering]] |
-| Evals | 2 | Магнит, 1440 | [[evals-cost-latency]] |
-| Go / Rust | 2 | 1440 (Go обязателен), Constructor (плюс) | [[go-lang]] |
-| Облако, Terraform, векторные БД, английский | 1 | Constructor | [[_optional]] |
+| Python | 7 | все | [_python-core](../10-python-core/_python-core.md) |
+| PostgreSQL / SQL | 6 | все, кроме Constructor | [_databases](../20-databases/_databases.md) |
+| Проектирование: микросервисы, архитектура | 6 | все, кроме 1440 | [_system-design](../80-system-design/_system-design.md), [architecture-layers](../30-backend-design/architecture-layers.md) |
+| Async: FastAPI, aiohttp, asyncio | 5 | Альфа, X5, Циан, Банк, 1440 | [asyncio](../10-python-core/asyncio.md), [fastapi](../30-backend-design/fastapi.md) |
+| Kubernetes | 5 | Альфа, X5, Циан, Constructor, 1440 | [kubernetes](../40-infra/kubernetes.md) |
+| Docker | 5 | Альфа, Циан, Банк, 1440, X5 | [docker](../40-infra/docker.md) |
+| Kafka / RabbitMQ | 4 | Альфа, X5, Циан, Банк | [kafka](../50-messaging-caching/kafka.md) |
+| SQLAlchemy / Alembic | 4 | Альфа, X5, Циан, Банк | [sqlalchemy-alembic](../20-databases/sqlalchemy-alembic.md) |
+| Тесты (unit + интеграционные) | 4 | X5, Циан, Банк, 1440 | [_testing](../60-testing/_testing.md) |
+| Observability | 4 | Циан, Банк, Constructor, Магнит | [observability](../40-infra/observability.md) |
+| AI-инструменты в разработке | 3 | Циан (спрашивают на собесе), Банк (выдают Claude Code), Constructor | [ai-assisted-development](../70-llm-engineering/ai-assisted-development.md) |
+| Redis | 3 | Альфа, Банк, 1440 | [redis](../50-messaging-caching/redis.md) |
+| CI/CD | 3 | X5, Циан (Jenkins), Банк | [ci-cd](../40-infra/ci-cd.md) |
+| Оптимизация БД и производительности | 3 | X5, Циан, 1440 | [query-optimization-n-plus-1](../20-databases/query-optimization-n-plus-1.md), [memory-performance](../10-python-core/memory-performance.md) |
+| LLM: RAG, tool calling, structured output | 2 + 2 рядом | Магнит, 1440; Альфа и Constructor — «понимать ML» | [_llm-engineering](../70-llm-engineering/_llm-engineering.md) |
+| Evals | 2 | Магнит, 1440 | [evals-cost-latency](../70-llm-engineering/evals-cost-latency.md) |
+| Go / Rust | 2 | 1440 (Go обязателен), Constructor (плюс) | [go-lang](../95-optional/go-lang.md) |
+| Облако, Terraform, векторные БД, английский | 1 | Constructor | [_optional](../95-optional/_optional.md) |
 | Фронт, классический MLOps | 0 | — | — |
 
 ## Уровни

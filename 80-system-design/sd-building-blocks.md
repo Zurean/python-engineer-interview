@@ -18,17 +18,17 @@ updated: 2026-10-29
 
 **Балансировка и stateless-сервисы.** L4/L7 балансировщик (nginx, envoy, cloud LB), round-robin/least-connections, health checks. Сервисы без состояния → масштабирование репликами. Сессии — в Redis, не в памяти. Цена: нет.
 
-**Кэширование.** Где: клиент/CDN, API-слой, приложение (in-memory), распределённый (Redis), БД (shared buffers). Стратегии: cache-aside (читаем кэш → промах → БД → кладём), write-through, write-behind. TTL vs явная инвалидация. Цена: инвалидация (самая сложная проблема), stale data, cache stampede (lock/early refresh), горячие ключи. См. [[redis]].
+**Кэширование.** Где: клиент/CDN, API-слой, приложение (in-memory), распределённый (Redis), БД (shared buffers). Стратегии: cache-aside (читаем кэш → промах → БД → кладём), write-through, write-behind. TTL vs явная инвалидация. Цена: инвалидация (самая сложная проблема), stale data, cache stampede (lock/early refresh), горячие ключи. См. [redis](../50-messaging-caching/redis.md).
 
 **Репликация БД.** Primary + read replicas (streaming), чтение с реплик → лаг → read-your-writes проблема (читать с primary после записи своего). Failover (Patroni). Multi-primary — почти никогда. Цена: лаг, сложность роутинга.
 
 **Партиционирование и шардирование.** Партиционирование — внутри одной БД (по времени, по ключу). Шардирование — по разным инстансам: ключ шардирования (user_id, tenant), hash vs range, consistent hashing. Цена: cross-shard запросы и транзакции, ребалансировка, горячие шарды. Делать, когда вертикальное масштабирование и реплики исчерпаны.
 
-**Очереди и брокеры.** Разгрузка синхронного пути, буферизация пиков, развязка сервисов, ретраи. Kafka (лог, партиции, consumer groups, replay) vs RabbitMQ (очереди, роутинг, ack) vs SQS/Redis Streams. Гарантии: at-most/at-least/exactly-once (последняя — почти всегда «at-least + идемпотентность»). Порядок — в рамках партиции/ключа. Цена: eventual consistency, дубликаты, мониторинг лага, DLQ. См. [[kafka]], [[task-queues]].
+**Очереди и брокеры.** Разгрузка синхронного пути, буферизация пиков, развязка сервисов, ретраи. Kafka (лог, партиции, consumer groups, replay) vs RabbitMQ (очереди, роутинг, ack) vs SQS/Redis Streams. Гарантии: at-most/at-least/exactly-once (последняя — почти всегда «at-least + идемпотентность»). Порядок — в рамках партиции/ключа. Цена: eventual consistency, дубликаты, мониторинг лага, DLQ. См. [kafka](../50-messaging-caching/kafka.md), [task-queues](../50-messaging-caching/task-queues.md).
 
-**Консистентность.** CAP на пальцах: при сетевом разделении выбираем доступность или консистентность. Сильная vs eventual; где строгая обязательна (деньги, остатки) — транзакции в одной БД, идемпотентность, outbox; где можно eventual — ленты, счётчики, поиск. Saga для многошаговых операций между сервисами. См. [[transactions-isolation-locks]], [[resilience-patterns]].
+**Консистентность.** CAP на пальцах: при сетевом разделении выбираем доступность или консистентность. Сильная vs eventual; где строгая обязательна (деньги, остатки) — транзакции в одной БД, идемпотентность, outbox; где можно eventual — ленты, счётчики, поиск. Saga для многошаговых операций между сервисами. См. [transactions-isolation-locks](../20-databases/transactions-isolation-locks.md), [resilience-patterns](../30-backend-design/resilience-patterns.md).
 
-**Хранилища по задаче.** Реляционная (Postgres) — дефолт; документная (Mongo) — гибкая схема, редко нужна; key-value (Redis) — кэш/сессии/счётчики; поиск (Elasticsearch/OpenSearch) — полнотекст, фасеты; колоночные (ClickHouse) — аналитика; объектное (S3) — файлы; time-series; графовые; векторные (pgvector/Qdrant) — [[vector-dbs]]. Ответ «Postgres + S3 + Redis» закрывает 80 % кейсов.
+**Хранилища по задаче.** Реляционная (Postgres) — дефолт; документная (Mongo) — гибкая схема, редко нужна; key-value (Redis) — кэш/сессии/счётчики; поиск (Elasticsearch/OpenSearch) — полнотекст, фасеты; колоночные (ClickHouse) — аналитика; объектное (S3) — файлы; time-series; графовые; векторные (pgvector/Qdrant) — [vector-dbs](../95-optional/vector-dbs.md). Ответ «Postgres + S3 + Redis» закрывает 80 % кейсов.
 
 **Поиск и индексация.** CDC/outbox → индексатор → Elasticsearch; eventual.
 
@@ -40,7 +40,7 @@ updated: 2026-10-29
 
 **Realtime.** Polling → long polling → SSE → WebSocket; pub/sub через Redis/Kafka между репликами.
 
-**Наблюдаемость и деплой** — одной фразой в каждом дизайне ([[observability]], [[kubernetes]]).
+**Наблюдаемость и деплой** — одной фразой в каждом дизайне ([observability](../40-infra/observability.md), [kubernetes](../40-infra/kubernetes.md)).
 
 ## Вопросы с собесов
 
@@ -70,7 +70,7 @@ updated: 2026-10-29
 
 ## Связи
 
-[[sd-framework]] · [[sd-practice-cases]] · [[kafka]] · [[redis]] · [[transactions-isolation-locks]] · [[resilience-patterns]] · [[postgres-indexes-explain]]
+[sd-framework](sd-framework.md) · [sd-practice-cases](sd-practice-cases.md) · [kafka](../50-messaging-caching/kafka.md) · [redis](../50-messaging-caching/redis.md) · [transactions-isolation-locks](../20-databases/transactions-isolation-locks.md) · [resilience-patterns](../30-backend-design/resilience-patterns.md) · [postgres-indexes-explain](../20-databases/postgres-indexes-explain.md)
 
 ## Мои заметки
 

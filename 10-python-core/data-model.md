@@ -24,7 +24,7 @@ updated: 2026-10-29
 - **Дескрипторы:** объект с `__get__`/`__set__`/`__delete__` на уровне класса. На них построены `property`, методы (функции — дескрипторы, отсюда `self`), `classmethod`, `staticmethod`. Data-дескриптор (есть `__set__`) имеет приоритет над instance `__dict__`.
 - **MRO:** C3-линеаризация; `Class.__mro__`. `super()` идёт по MRO *экземпляра*, а не к «родителю» — поэтому работают миксины и cooperative multiple inheritance.
 - **`__slots__`:** убирает `__dict__` у экземпляра → меньше памяти, быстрее доступ, нельзя добавлять произвольные атрибуты.
-- **dataclasses:** генерируют `__init__`, `__repr__`, `__eq__`; `frozen=True`, `slots=True`, `field(default_factory=list)`, `kw_only=True`. Отличие от `NamedTuple`, `TypedDict`, Pydantic — см. [[typing]].
+- **dataclasses:** генерируют `__init__`, `__repr__`, `__eq__`; `frozen=True`, `slots=True`, `field(default_factory=list)`, `kw_only=True`. Отличие от `NamedTuple`, `TypedDict`, Pydantic — см. [typing](typing.md).
 - **Копирование:** `copy.copy` (поверхностная) vs `copy.deepcopy`; присваивание копию не делает.
 - **Области видимости:** LEGB, `global`, `nonlocal`; замыкания захватывают переменную, а не значение (ловушка с лямбдами в цикле).
 
@@ -61,7 +61,7 @@ updated: 2026-10-29
 
 ## Связи
 
-[[generators-context-managers-decorators]] · [[typing]] · [[memory-performance]] · [[python-live-coding-tasks]]
+[generators-context-managers-decorators](generators-context-managers-decorators.md) · [typing](typing.md) · [memory-performance](memory-performance.md) · [python-live-coding-tasks](../90-live-coding/python-live-coding-tasks.md)
 
 ## Мои заметки
 

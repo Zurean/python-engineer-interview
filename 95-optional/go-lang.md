@@ -31,7 +31,7 @@ updated: 2026-10-29
 
 ## Связи
 
-[[asyncio]] · [[gil-threads-processes]] · [[target-profile]]
+[asyncio](../10-python-core/asyncio.md) · [gil-threads-processes](../10-python-core/gil-threads-processes.md) · [target-profile](../00-strategy/target-profile.md)
 
 ## Мои заметки
 

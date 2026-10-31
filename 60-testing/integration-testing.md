@@ -41,7 +41,7 @@ updated: 2026-10-29
 
 - Transaction rollback паттерн с async SQLAlchemy: `join_transaction_mode="create_savepoint"`.
 - Тестирование с репликой/лагом, тесты на блокировки и deadlock (два параллельных воркера).
-- Тестовые двойники для LLM-вызовов: записанные ответы (VCR-подход), детерминированные фейки; evals как отдельный вид тестов ([[evals-cost-latency]]).
+- Тестовые двойники для LLM-вызовов: записанные ответы (VCR-подход), детерминированные фейки; evals как отдельный вид тестов ([evals-cost-latency](../70-llm-engineering/evals-cost-latency.md)).
 - Consumer-driven contracts (pact) между сервисами.
 - Load/perf-тесты (locust, k6) как часть CI на ветке релиза.
 
@@ -53,7 +53,7 @@ updated: 2026-10-29
 
 ## Связи
 
-[[pytest]] · [[sqlalchemy-alembic]] · [[docker]] · [[ci-cd]] · [[kafka]]
+[pytest](pytest.md) · [sqlalchemy-alembic](../20-databases/sqlalchemy-alembic.md) · [docker](../40-infra/docker.md) · [ci-cd](../40-infra/ci-cd.md) · [kafka](../50-messaging-caching/kafka.md)
 
 ## Мои заметки
 

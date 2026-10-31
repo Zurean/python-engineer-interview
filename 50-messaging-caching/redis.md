@@ -43,7 +43,7 @@ updated: 2026-10-29
 
 - Внутренности: encoding структур (listpack, skiplist), I/O threads (6.0+), memory fragmentation.
 - Client-side caching (RESP3 tracking), near-cache паттерны.
-- Отложенные задачи и расписания на sorted set; сравнение с [[task-queues]].
+- Отложенные задачи и расписания на sorted set; сравнение с [task-queues](task-queues.md).
 - Valkey/KeyDB/Dragonfly как альтернативы после смены лицензии.
 
 ## Ресурсы
@@ -54,7 +54,7 @@ updated: 2026-10-29
 
 ## Связи
 
-[[resilience-patterns]] · [[sd-building-blocks]] · [[query-optimization-n-plus-1]] · [[auth-security]] · [[task-queues]]
+[resilience-patterns](../30-backend-design/resilience-patterns.md) · [sd-building-blocks](../80-system-design/sd-building-blocks.md) · [query-optimization-n-plus-1](../20-databases/query-optimization-n-plus-1.md) · [auth-security](../30-backend-design/auth-security.md) · [task-queues](task-queues.md)
 
 ## Мои заметки
 

@@ -45,7 +45,7 @@ updated: 2026-10-29
 
 - Retry budgets и adaptive concurrency (по мотивам Google SRE, Netflix concurrency-limits).
 - Deadline propagation через заголовки между сервисами (gRPC-style).
-- Exactly-once semantics в Kafka: идемпотентный продюсер, транзакции, почему end-to-end exactly-once всё равно требует идемпотентного консюмера ([[kafka]]).
+- Exactly-once semantics в Kafka: идемпотентный продюсер, транзакции, почему end-to-end exactly-once всё равно требует идемпотентного консюмера ([kafka](../50-messaging-caching/kafka.md)).
 - Chaos engineering на минималках: убить зависимость в docker-compose и посмотреть, что будет.
 - Паттерны из «Release It!» (Nygard): Steady State, Fail Fast, Handshaking.
 
@@ -58,7 +58,7 @@ updated: 2026-10-29
 
 ## Связи
 
-[[kafka]] · [[redis]] · [[task-queues]] · [[sd-building-blocks]] · [[observability]] · [[transactions-isolation-locks]]
+[kafka](../50-messaging-caching/kafka.md) · [redis](../50-messaging-caching/redis.md) · [task-queues](../50-messaging-caching/task-queues.md) · [sd-building-blocks](../80-system-design/sd-building-blocks.md) · [observability](../40-infra/observability.md) · [transactions-isolation-locks](../20-databases/transactions-isolation-locks.md)
 
 ## Мои заметки
 

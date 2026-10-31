@@ -30,10 +30,10 @@ updated: 2026-10-31
 
 Модуль рассчитан на Python 3.11+ и использует `TaskGroup` и `asyncio.timeout()`. Его удобно пройти за две сессии: сначала части 1–2, затем части 3–4.
 
-1. [[asyncio-mental-model]] — построить модель event loop, корутины, задачи и точки кооперативного переключения.
-2. [[asyncio-tasks-structured-concurrency]] — научиться выбирать между последовательным `await`, `gather` и `TaskGroup`, понимать владение задачами и распространение ошибок.
-3. [[asyncio-cancellation-timeouts]] — рассматривать отмену как часть протокола управления, корректно реализовывать cleanup и таймауты.
-4. [[asyncio-backend-patterns-practice]] — не блокировать loop, ограничивать нагрузку, применять backpressure и закрепить материал на backend-сценарии.
+1. [asyncio-mental-model](asyncio-mental-model.md) — построить модель event loop, корутины, задачи и точки кооперативного переключения.
+2. [asyncio-tasks-structured-concurrency](asyncio-tasks-structured-concurrency.md) — научиться выбирать между последовательным `await`, `gather` и `TaskGroup`, понимать владение задачами и распространение ошибок.
+3. [asyncio-cancellation-timeouts](asyncio-cancellation-timeouts.md) — рассматривать отмену как часть протокола управления, корректно реализовывать cleanup и таймауты.
+4. [asyncio-backend-patterns-practice](asyncio-backend-patterns-practice.md) — не блокировать loop, ограничивать нагрузку, применять backpressure и закрепить материал на backend-сценарии.
 
 ## Вопросы с собесов
 
@@ -68,7 +68,7 @@ updated: 2026-10-31
 
 ## Связи
 
-[[gil-threads-processes]] · [[fastapi]] · [[sqlalchemy-alembic]] · [[resilience-patterns]] · [[python-live-coding-tasks]]
+[gil-threads-processes](gil-threads-processes.md) · [fastapi](../30-backend-design/fastapi.md) · [sqlalchemy-alembic](../20-databases/sqlalchemy-alembic.md) · [resilience-patterns](../30-backend-design/resilience-patterns.md) · [python-live-coding-tasks](../90-live-coding/python-live-coding-tasks.md)
 
 ## Мои заметки
 

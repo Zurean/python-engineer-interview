@@ -12,7 +12,7 @@ updated: 2026-10-29
 
 # Кейсы для тренировки (вслух, с таймером)
 
-> **Зачем на собесе:** секция — это навык, а не знание. 6 кейсов ниже покрывают типовые вопросы российских собесов. На каждый — 45 минут по [[sd-framework]], потом сверка с подсказками.
+> **Зачем на собесе:** секция — это навык, а не знание. 6 кейсов ниже покрывают типовые вопросы российских собесов. На каждый — 45 минут по [sd-framework](sd-framework.md), потом сверка с подсказками.
 
 ## Как тренировать
 
@@ -41,7 +41,7 @@ updated: 2026-10-29
 
 ### 5. Обработка документов / RAG-сервис (см. capstone)
 - [ ] Прошёл
-- Подсказки: загрузка в S3 через presigned URL → событие → пайплайн (парсинг, чанкинг, эмбеддинги) через Kafka с ретраями → pgvector/Qdrant; API запроса: retrieval → rerank → LLM; кэш ответов; стоимость и латентность; evals; multi-tenancy и доступы; мониторинг качества. Связь: [[rag]], [[rag-service-project]].
+- Подсказки: загрузка в S3 через presigned URL → событие → пайплайн (парсинг, чанкинг, эмбеддинги) через Kafka с ретраями → pgvector/Qdrant; API запроса: retrieval → rerank → LLM; кэш ответов; стоимость и латентность; evals; multi-tenancy и доступы; мониторинг качества. Связь: [rag](../70-llm-engineering/rag.md), [rag-service-project](../capstone/rag-service-project.md).
 
 ### 6. Rate limiter / API gateway
 - [ ] Прошёл
@@ -71,7 +71,7 @@ updated: 2026-10-29
 
 ## Связи
 
-[[sd-framework]] · [[sd-building-blocks]] · [[resilience-patterns]] · [[rag]] · [[kafka]] · [[redis]]
+[sd-framework](sd-framework.md) · [sd-building-blocks](sd-building-blocks.md) · [resilience-patterns](../30-backend-design/resilience-patterns.md) · [rag](../70-llm-engineering/rag.md) · [kafka](../50-messaging-caching/kafka.md) · [redis](../50-messaging-caching/redis.md)
 
 ## Мои заметки
 

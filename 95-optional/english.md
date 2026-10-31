@@ -28,7 +28,7 @@ updated: 2026-10-29
 
 ## Связи
 
-[[self-presentation]] · [[stories]] · [[target-profile]]
+[self-presentation](../00-strategy/self-presentation.md) · [stories](../00-strategy/stories.md) · [target-profile](../00-strategy/target-profile.md)
 
 ## Мои заметки
 

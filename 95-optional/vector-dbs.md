@@ -12,7 +12,7 @@ updated: 2026-10-29
 
 # Векторные БД глубже pgvector
 
-> **Зачем на собесе:** AI-позиции при масштабе; 1 из 7 явно. Для старта достаточно pgvector (см. [[rag]]). Здесь — что знать, чтобы обосновать выбор.
+> **Зачем на собесе:** AI-позиции при масштабе; 1 из 7 явно. Для старта достаточно pgvector (см. [rag](../70-llm-engineering/rag.md)). Здесь — что знать, чтобы обосновать выбор.
 
 ## Минимум (стаб)
 
@@ -28,7 +28,7 @@ updated: 2026-10-29
 
 ## Связи
 
-[[rag]] · [[postgres-indexes-explain]] · [[sd-building-blocks]]
+[rag](../70-llm-engineering/rag.md) · [postgres-indexes-explain](../20-databases/postgres-indexes-explain.md) · [sd-building-blocks](../80-system-design/sd-building-blocks.md)
 
 ## Мои заметки
 

@@ -11,9 +11,9 @@ updated: 2026-10-29
 
 Главное: секция проверяет **процесс рассуждения**, а не знание «правильной» архитектуры. Кандидат без фреймворка ответа проваливается даже с хорошими знаниями. Поэтому порядок такой:
 
-1. [[sd-framework]] — пошаговый сценарий ответа (45 минут). Выучить как стихотворение.
-2. [[sd-building-blocks]] — кирпичики: балансировка, кэш, очереди, шардирование, репликация, консистентность. Каждый — с ценой.
-3. [[sd-practice-cases]] — 6 кейсов, прогнать вслух по фреймворку, с таймером.
+1. [sd-framework](sd-framework.md) — пошаговый сценарий ответа (45 минут). Выучить как стихотворение.
+2. [sd-building-blocks](sd-building-blocks.md) — кирпичики: балансировка, кэш, очереди, шардирование, репликация, консистентность. Каждый — с ценой.
+3. [sd-practice-cases](sd-practice-cases.md) — 6 кейсов, прогнать вслух по фреймворку, с таймером.
 
 ## Подтемы
 
@@ -22,8 +22,8 @@ TABLE WITHOUT ID file.link AS "Тема", impact AS "Импакт", effort AS "�
 FROM "80-system-design" WHERE type = "topic" SORT impact DESC
 ```
 
-Без Dataview: [[sd-framework]] · [[sd-building-blocks]] · [[sd-practice-cases]]
+Без Dataview: [sd-framework](sd-framework.md) · [sd-building-blocks](sd-building-blocks.md) · [sd-practice-cases](sd-practice-cases.md)
 
 ## Как тренироваться
 
-Один кейс = 45 минут вслух + 15 минут разбора. Записывать на диктофон или рисовать в excalidraw. Два кейса в неделю — через месяц секция перестаёт пугать. Опорные темы: [[resilience-patterns]], [[kafka]], [[redis]], [[transactions-isolation-locks]].
+Один кейс = 45 минут вслух + 15 минут разбора. Записывать на диктофон или рисовать в excalidraw. Два кейса в неделю — через месяц секция перестаёт пугать. Опорные темы: [resilience-patterns](../30-backend-design/resilience-patterns.md), [kafka](../50-messaging-caching/kafka.md), [redis](../50-messaging-caching/redis.md), [transactions-isolation-locks](../20-databases/transactions-isolation-locks.md).

@@ -1,7 +1,7 @@
 ---
 type: theory
 title: Backend-паттерны и практика asyncio
-parent: "[[asyncio]]"
+parent: "[asyncio](asyncio.md)"
 topic: asyncio
 order: 4
 status: review
@@ -13,7 +13,7 @@ updated: 2026-10-31
 
 # Backend-паттерны и практика asyncio
 
-Родительская тема: [[asyncio]].
+Родительская тема: [asyncio](asyncio.md).
 
 ## Результаты обучения
 
@@ -57,7 +57,7 @@ asyncio.run(main())
 
 `to_thread` не делает функцию неблокирующей — она блокирует другой поток. Отмена ожидающей Task не умеет принудительно остановить уже работающую Python-функцию в потоке. Поэтому функция всё равно должна иметь собственные сетевые таймауты и ограниченный runtime.
 
-Из-за GIL `to_thread` обычно не ускоряет CPU-bound Python-код. Он может быть уместен для C-расширения, которое освобождает GIL, но это свойство нужно проверять по документации библиотеки. Связь с выбором потоков и процессов разобрана в [[gil-threads-processes]].
+Из-за GIL `to_thread` обычно не ускоряет CPU-bound Python-код. Он может быть уместен для C-расширения, которое освобождает GIL, но это свойство нужно проверять по документации библиотеки. Связь с выбором потоков и процессов разобрана в [gil-threads-processes](gil-threads-processes.md).
 
 ## Ограничение конкурентности через Semaphore
 
@@ -189,7 +189,7 @@ async def build_dashboard(user_id: int) -> dict[str, object]:
 - снимать stack traces и профили, а не угадывать по наличию `async def`;
 - проверять метрики pool exhaustion, queue depth, in-flight requests и event-loop lag.
 
-Debug mode имеет накладные расходы и не заменяет production observability. Связанные практики: [[observability]] и [[resilience-patterns]].
+Debug mode имеет накладные расходы и не заменяет production observability. Связанные практики: [observability](../40-infra/observability.md) и [resilience-patterns](../30-backend-design/resilience-patterns.md).
 
 ## Типичные ошибки — короткий чеклист
 
@@ -249,7 +249,7 @@ Debug mode имеет накладные расходы и не заменяет
 9. Чем concurrency limit отличается от rate limit?
 10. Как организовать graceful shutdown долгоживущих workers?
 
-Эти вопросы покрывают исходный чеклист в [[asyncio#Вопросы с собесов]]. Чекбоксы отмечаются только после того, как ответы воспроизводятся без подсказки.
+Эти вопросы покрывают исходный чеклист в [asyncio#Вопросы с собесов](asyncio.md#Вопросы%20с%20собесов). Чекбоксы отмечаются только после того, как ответы воспроизводятся без подсказки.
 
 ## Краткое резюме модуля
 
@@ -265,4 +265,4 @@ Debug mode имеет накладные расходы и не заменяет
 
 ---
 
-Предыдущая часть: [[asyncio-cancellation-timeouts]] · Вернуться к карточке: [[asyncio]].
+Предыдущая часть: [asyncio-cancellation-timeouts](asyncio-cancellation-timeouts.md) · Вернуться к карточке: [asyncio](asyncio.md).

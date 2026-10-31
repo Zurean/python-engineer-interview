@@ -1,7 +1,7 @@
 ---
 type: theory
 title: Отмена и таймауты в asyncio
-parent: "[[asyncio]]"
+parent: "[asyncio](asyncio.md)"
 topic: asyncio
 order: 3
 status: review
@@ -13,7 +13,7 @@ updated: 2026-10-31
 
 # Отмена и таймауты в asyncio
 
-Родительская тема: [[asyncio]].
+Родительская тема: [asyncio](asyncio.md).
 
 ## Результаты обучения
 
@@ -205,4 +205,4 @@ async def poll() -> None:
 
 ---
 
-Предыдущая часть: [[asyncio-tasks-structured-concurrency]] · Следующая часть: [[asyncio-backend-patterns-practice]].
+Предыдущая часть: [asyncio-tasks-structured-concurrency](asyncio-tasks-structured-concurrency.md) · Следующая часть: [asyncio-backend-patterns-practice](asyncio-backend-patterns-practice.md).

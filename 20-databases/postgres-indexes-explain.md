@@ -64,7 +64,7 @@ updated: 2026-10-29
 
 ## Связи
 
-[[transactions-isolation-locks]] · [[query-optimization-n-plus-1]] · [[sqlalchemy-alembic]] · [[sd-building-blocks]]
+[transactions-isolation-locks](transactions-isolation-locks.md) · [query-optimization-n-plus-1](query-optimization-n-plus-1.md) · [sqlalchemy-alembic](sqlalchemy-alembic.md) · [sd-building-blocks](../80-system-design/sd-building-blocks.md)
 
 ## Мои заметки
 

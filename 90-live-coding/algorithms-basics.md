@@ -60,7 +60,7 @@ updated: 2026-10-29
 
 ## Связи
 
-[[python-live-coding-tasks]] · [[data-model]] · [[memory-performance]]
+[python-live-coding-tasks](python-live-coding-tasks.md) · [data-model](../10-python-core/data-model.md) · [memory-performance](../10-python-core/memory-performance.md)
 
 ## Мои заметки
 

@@ -11,11 +11,11 @@ updated: 2026-10-29
 
 ## Порядок прохождения (Парето)
 
-1. [[postgres-indexes-explain]] — индексы и чтение планов: спрашивают всегда.
-2. [[transactions-isolation-locks]] — уровни изоляции, deadlock, FOR UPDATE.
-3. [[sqlalchemy-alembic]] — стек из вакансий: сессии, async, миграции.
-4. [[query-optimization-n-plus-1]] — N+1, пагинация, батчинг.
-5. [[zero-downtime-migrations]] — «переименуй колонку на живой базе»: Senior-вопрос.
+1. [postgres-indexes-explain](postgres-indexes-explain.md) — индексы и чтение планов: спрашивают всегда.
+2. [transactions-isolation-locks](transactions-isolation-locks.md) — уровни изоляции, deadlock, FOR UPDATE.
+3. [sqlalchemy-alembic](sqlalchemy-alembic.md) — стек из вакансий: сессии, async, миграции.
+4. [query-optimization-n-plus-1](query-optimization-n-plus-1.md) — N+1, пагинация, батчинг.
+5. [zero-downtime-migrations](zero-downtime-migrations.md) — «переименуй колонку на живой базе»: Senior-вопрос.
 
 ## Подтемы
 
@@ -25,7 +25,7 @@ FROM "20-databases" WHERE type = "topic" SORT impact DESC, effort ASC
 ```
 
 Без Dataview:
-- [[postgres-indexes-explain]] · [[transactions-isolation-locks]] · [[sqlalchemy-alembic]] · [[query-optimization-n-plus-1]] · [[zero-downtime-migrations]]
+- [postgres-indexes-explain](postgres-indexes-explain.md) · [transactions-isolation-locks](transactions-isolation-locks.md) · [sqlalchemy-alembic](sqlalchemy-alembic.md) · [query-optimization-n-plus-1](query-optimization-n-plus-1.md) · [zero-downtime-migrations](zero-downtime-migrations.md)
 
 ## Практика
 

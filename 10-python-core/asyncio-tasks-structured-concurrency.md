@@ -1,7 +1,7 @@
 ---
 type: theory
 title: Задачи и структурная конкурентность в asyncio
-parent: "[[asyncio]]"
+parent: "[asyncio](asyncio.md)"
 topic: asyncio
 order: 2
 status: review
@@ -13,7 +13,7 @@ updated: 2026-10-31
 
 # Задачи и структурная конкурентность в asyncio
 
-Родительская тема: [[asyncio]].
+Родительская тема: [asyncio](asyncio.md).
 
 ## Результаты обучения
 
@@ -164,7 +164,7 @@ return response
 
 ### Создать тысячи задач и считать это ограничением нагрузки
 
-Task — лёгкий объект, но каждая задача удерживает данные и может открыть соединение. `gather(*(fetch(x) for x in items))` планирует всю коллекцию. Ограничение нагрузки — отдельная задача; см. [[asyncio-backend-patterns-practice]].
+Task — лёгкий объект, но каждая задача удерживает данные и может открыть соединение. `gather(*(fetch(x) for x in items))` планирует всю коллекцию. Ограничение нагрузки — отдельная задача; см. [asyncio-backend-patterns-practice](asyncio-backend-patterns-practice.md).
 
 ## Самопроверка
 
@@ -197,4 +197,4 @@ Task — лёгкий объект, но каждая задача удержи�
 
 ---
 
-Предыдущая часть: [[asyncio-mental-model]] · Следующая часть: [[asyncio-cancellation-timeouts]].
+Предыдущая часть: [asyncio-mental-model](asyncio-mental-model.md) · Следующая часть: [asyncio-cancellation-timeouts](asyncio-cancellation-timeouts.md).

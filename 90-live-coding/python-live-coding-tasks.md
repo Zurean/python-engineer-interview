@@ -18,7 +18,7 @@ updated: 2026-10-29
 
 Отвечать вслух, по таймеру 2–3 минуты на вопрос. `[x]` — только если ответил уверенно и полно. Провалил — открыть заметку темы, через день вернуться.
 
-## Язык → [[data-model]], [[generators-context-managers-decorators]]
+## Язык → [data-model](../10-python-core/data-model.md), [generators-context-managers-decorators](../10-python-core/generators-context-managers-decorators.md)
 
 - [ ] 1. Что выведет `def f(x=[]): x.append(1); return x` при двух вызовах? Почему и как исправить?
 - [ ] 2. Чем `__getattr__` отличается от `__getattribute__`? Что такое дескриптор и где он в стандартной библиотеке?
@@ -26,30 +26,30 @@ updated: 2026-10-29
 - [ ] 4. Напиши контекстный менеджер двумя способами. Что происходит с исключением внутри `with`?
 - [ ] 5. Как работает MRO при множественном наследовании и что на самом деле делает `super()`?
 
-## Типизация → [[typing]]
+## Типизация → [typing](../10-python-core/typing.md)
 
 - [ ] 6. `Protocol` vs ABC — разница, когда что?
 - [ ] 7. Как типизировать функцию, возвращающую тот же тип, что получила?
 - [ ] 8. Pydantic-модель, dataclass, TypedDict — что когда? Где граница валидации?
 
-## Конкурентность → [[asyncio]], [[gil-threads-processes]]
+## Конкурентность → [asyncio](../10-python-core/asyncio.md), [gil-threads-processes](../10-python-core/gil-threads-processes.md)
 
 - [ ] 9. Что такое GIL, что защищает и чего не защищает? Что меняет free-threaded Python?
 - [ ] 10. В async-обработчике синхронный HTTP-клиент. Что будет и как исправить?
 - [ ] 11. `gather` vs `TaskGroup`? Как работает отмена, почему нельзя глотать `CancelledError`?
 - [ ] 12. 10 000 URL с лимитом 50 одновременных — как?
 
-## Производительность → [[memory-performance]]
+## Производительность → [memory-performance](../10-python-core/memory-performance.md)
 
 - [ ] 13. Сервис медленный. Шаги от симптома до фикса.
 - [ ] 14. Откуда утечки памяти при наличии GC?
 
-## Тулинг → [[tooling]]
+## Тулинг → [tooling](../10-python-core/tooling.md)
 
 - [ ] 15. Проект с нуля: менеджер, линтер, тайпчекер, где фиксируются версии, почему так?
 - [ ] 16. Lock-файл vs диапазоны версий в `pyproject.toml`?
 
-## Бэкенд и данные → [[fastapi]], [[sqlalchemy-alembic]], [[query-optimization-n-plus-1]], [[zero-downtime-migrations]], [[resilience-patterns]]
+## Бэкенд и данные → [fastapi](../30-backend-design/fastapi.md), [sqlalchemy-alembic](../20-databases/sqlalchemy-alembic.md), [query-optimization-n-plus-1](../20-databases/query-optimization-n-plus-1.md), [zero-downtime-migrations](../20-databases/zero-downtime-migrations.md), [resilience-patterns](../30-backend-design/resilience-patterns.md)
 
 - [ ] 17. Как FastAPI обрабатывает `def` и `async def`? Что при тяжёлом CPU в `async def`?
 - [ ] 18. Что такое N+1, как ловить и лечить в SQLAlchemy?
@@ -57,12 +57,12 @@ updated: 2026-10-29
 - [ ] 20. Безопасная миграция с переименованием колонки на живой базе?
 - [ ] 21. Задача в очереди может выполниться дважды — как сделать идемпотентно?
 
-## Тесты → [[pytest]], [[integration-testing]]
+## Тесты → [pytest](../60-testing/pytest.md), [integration-testing](../60-testing/integration-testing.md)
 
 - [ ] 22. Что мокаешь, а что нет? Когда моки вредят?
 - [ ] 23. Тесты с БД: реальная база, SQLite или моки? Плюсы/минусы.
 
-## Архитектура и роль → [[architecture-layers]], [[stories]]
+## Архитектура и роль → [architecture-layers](../30-backend-design/architecture-layers.md), [stories](../00-strategy/stories.md)
 
 - [ ] 24. Где в твоём проекте живёт бизнес-логика? Что бы переделал?
 - [ ] 25. Техническое решение, оказавшееся ошибкой. Как понял?
@@ -79,7 +79,7 @@ updated: 2026-10-29
 - [ ] Парсинг лога: топ-10 IP по количеству запросов, потоково, файл не влезает в память.
 - [ ] Класс `Money`/`Vector` с dunder-методами (`__add__`, `__eq__`, `__hash__`, `__repr__`), frozen dataclass.
 - [ ] Функция с `Protocol`-зависимостью и её тест с фейком.
-- [ ] Рефакторинг: дан «плохой» код (глобалы, длинная функция, бизнес-логика в роутере) — привести к слоям ([[architecture-layers]]).
+- [ ] Рефакторинг: дан «плохой» код (глобалы, длинная функция, бизнес-логика в роутере) — привести к слоям ([architecture-layers](../30-backend-design/architecture-layers.md)).
 - [ ] FastAPI-эндпоинт с Pydantic-валидацией, зависимостью на сессию и обработкой доменной ошибки → 409.
 - [ ] SQL: запрос «последний заказ каждого пользователя» (window function / DISTINCT ON), «пользователи без заказов», «топ-5 по сумме за месяц».
 

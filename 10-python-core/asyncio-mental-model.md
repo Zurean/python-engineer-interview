@@ -1,7 +1,7 @@
 ---
 type: theory
 title: Ментальная модель asyncio
-parent: "[[asyncio]]"
+parent: "[asyncio](asyncio.md)"
 topic: asyncio
 order: 1
 status: review
@@ -13,7 +13,7 @@ updated: 2026-10-31
 
 # Ментальная модель asyncio
 
-Родительская тема: [[asyncio]].
+Родительская тема: [asyncio](asyncio.md).
 
 ## Результаты обучения
 
@@ -157,7 +157,7 @@ async def main() -> None:
 asyncio.run(main())
 ```
 
-Само ключевое слово `async` ничего не делает неблокирующим. Исправление зависит от природы операции: использовать нативную async-библиотеку, вынести совместимый блокирующий I/O в поток или CPU-bound работу — в отдельный процесс. Это подробно разбирается в [[asyncio-backend-patterns-practice]].
+Само ключевое слово `async` ничего не делает неблокирующим. Исправление зависит от природы операции: использовать нативную async-библиотеку, вынести совместимый блокирующий I/O в поток или CPU-bound работу — в отдельный процесс. Это подробно разбирается в [asyncio-backend-patterns-practice](asyncio-backend-patterns-practice.md).
 
 ## Самопроверка
 
@@ -190,4 +190,4 @@ asyncio.run(main())
 
 ---
 
-Следующая часть: [[asyncio-tasks-structured-concurrency]].
+Следующая часть: [asyncio-tasks-structured-concurrency](asyncio-tasks-structured-concurrency.md).

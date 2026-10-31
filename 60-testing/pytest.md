@@ -20,7 +20,7 @@ updated: 2026-10-29
 - **Параметризация:** `@pytest.mark.parametrize` — таблица случаев вместо копипасты; `ids` для читаемых имён.
 - **Маркеры:** `@pytest.mark.slow`, `-m "not slow"`, `skipif`, `xfail`.
 - **Моки:** `unittest.mock` / `pytest-mock` (`mocker.patch`). Патчить там, где *используется*, а не где определено. `AsyncMock` для корутин. `spec=`/`autospec` чтобы мок не принимал любые вызовы.
-- **Что мокать, а что нет:** мокать внешние границы (HTTP-API, время, случайность, очереди), не мокать свою бизнес-логику и БД (для БД — реальная в контейнере, см. [[integration-testing]]). Когда моки начинают вредить: тест проверяет взаимодействие, а не поведение; ломается при рефакторинге; «зелёный тест, красный прод».
+- **Что мокать, а что нет:** мокать внешние границы (HTTP-API, время, случайность, очереди), не мокать свою бизнес-логику и БД (для БД — реальная в контейнере, см. [integration-testing](integration-testing.md)). Когда моки начинают вредить: тест проверяет взаимодействие, а не поведение; ломается при рефакторинге; «зелёный тест, красный прод».
 - **Фейки вместо моков:** in-memory репозиторий, фейковый шлюз — проще и устойчивее к рефакторингу.
 - **Async:** `pytest-asyncio` (`asyncio_mode = auto`) или `anyio`; async-фикстуры; одна event loop на сессию при необходимости.
 - **FastAPI:** `httpx.AsyncClient(transport=ASGITransport(app=app))`, `app.dependency_overrides[get_session] = ...`, lifespan через `LifespanManager` (asgi-lifespan).
@@ -60,7 +60,7 @@ updated: 2026-10-29
 
 ## Связи
 
-[[integration-testing]] · [[fastapi]] · [[architecture-layers]] · [[ci-cd]] · [[code-review-exercise]]
+[integration-testing](integration-testing.md) · [fastapi](../30-backend-design/fastapi.md) · [architecture-layers](../30-backend-design/architecture-layers.md) · [ci-cd](../40-infra/ci-cd.md) · [code-review-exercise](../90-live-coding/code-review-exercise.md)
 
 ## Мои заметки
 

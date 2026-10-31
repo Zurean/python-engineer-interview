@@ -42,14 +42,14 @@ updated: 2026-10-29
 - [ ] Как сделать очередь задач на Postgres? → *FOR UPDATE SKIP LOCKED*
 - [ ] Что такое `idle in transaction` и почему это плохо? → *держит блокировки/снимок; таймаут*
 - [ ] Миграция `ALTER TABLE ... ADD COLUMN ... DEFAULT` заблокировала прод. Почему? → *ACCESS EXCLUSIVE; с 11-й DEFAULT без rewrite, но lock всё равно; lock_timeout*
-- [ ] Транзакция в SQLAlchemy: где начинается, где коммитится, что с async-сессией? → *см. [[sqlalchemy-alembic]]*
+- [ ] Транзакция в SQLAlchemy: где начинается, где коммитится, что с async-сессией? → *см. [sqlalchemy-alembic](sqlalchemy-alembic.md)*
 
 ## Углубление
 
 - SSI в деталях: predicate locks, false positives, `pg_serialization_failure`.
 - Lock queue: почему ожидающий `ACCESS EXCLUSIVE` блокирует даже новые `SELECT` (ставится в очередь перед ними) — главная причина «миграция положила прод».
 - WAL, checkpoints, `synchronous_commit`, репликация (streaming, logical) и read replicas с лагом → stale reads.
-- Two-phase commit и почему распределённые транзакции между сервисами — плохая идея (→ saga, outbox в [[resilience-patterns]]).
+- Two-phase commit и почему распределённые транзакции между сервисами — плохая идея (→ saga, outbox в [resilience-patterns](../30-backend-design/resilience-patterns.md)).
 - Transaction ID wraparound и зачем агрессивный autovacuum.
 
 ## Ресурсы
@@ -60,7 +60,7 @@ updated: 2026-10-29
 
 ## Связи
 
-[[postgres-indexes-explain]] · [[zero-downtime-migrations]] · [[sqlalchemy-alembic]] · [[resilience-patterns]] · [[redis]]
+[postgres-indexes-explain](postgres-indexes-explain.md) · [zero-downtime-migrations](zero-downtime-migrations.md) · [sqlalchemy-alembic](sqlalchemy-alembic.md) · [resilience-patterns](../30-backend-design/resilience-patterns.md) · [redis](../50-messaging-caching/redis.md)
 
 ## Мои заметки
 

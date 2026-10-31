@@ -29,14 +29,14 @@ updated: 2026-10-29
 - Цель — понять, нужен ли вообще распределённый дизайн, или хватит одного Postgres (чаще всего хватает — это тоже сеньорный ответ).
 
 **3. High-level дизайн (10 мин).**
-- API (3–5 эндпоинтов, см. [[api-design]]).
+- API (3–5 эндпоинтов, см. [api-design](../30-backend-design/api-design.md)).
 - Схема данных: основные сущности, ключи, индексы.
 - Компоненты: клиент → балансировщик → сервис(ы) → БД, кэш, очередь, объектное хранилище. Нарисовать, объяснить поток для главного сценария.
 
 **4. Углубление (15–20 мин) — интервьюер выберет, куда копать; иначе выбрать самому самое рискованное место.**
 - Узкое место: БД на запись → шардирование/партиционирование; на чтение → реплики, кэш.
 - Асинхронщина: что можно вынести в очередь (уведомления, индексация, отчёты).
-- Отказоустойчивость: что произойдёт при падении каждого компонента ([[resilience-patterns]]).
+- Отказоустойчивость: что произойдёт при падении каждого компонента ([resilience-patterns](../30-backend-design/resilience-patterns.md)).
 - Консистентность: где нужна строгая, где eventual; идемпотентность; outbox.
 - Масштабирование stateless-сервисов — горизонтально; stateful — сложно, говорить честно.
 
@@ -75,7 +75,7 @@ updated: 2026-10-29
 
 ## Связи
 
-[[sd-building-blocks]] · [[sd-practice-cases]] · [[api-design]] · [[resilience-patterns]] · [[architecture-layers]]
+[sd-building-blocks](sd-building-blocks.md) · [sd-practice-cases](sd-practice-cases.md) · [api-design](../30-backend-design/api-design.md) · [resilience-patterns](../30-backend-design/resilience-patterns.md) · [architecture-layers](../30-backend-design/architecture-layers.md)
 
 ## Мои заметки
 

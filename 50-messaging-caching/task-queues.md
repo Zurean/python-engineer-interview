@@ -17,10 +17,10 @@ updated: 2026-10-29
 ## Минимум для собеса
 
 - **Зачем:** вынести из HTTP-запроса долгое/ненадёжное (письма, отчёты, обработка файлов, вызовы внешних API, индексация). Ответ пользователю быстро, работа — воркерами.
-- **Task queue vs event streaming:** task-очередь (Celery/Taskiq/arq/RQ) — «выполни эту работу один раз», ack per task, ретраи, результат; брокер событий (Kafka) — «произошло событие», много потребителей, replay. См. [[kafka]].
+- **Task queue vs event streaming:** task-очередь (Celery/Taskiq/arq/RQ) — «выполни эту работу один раз», ack per task, ретраи, результат; брокер событий (Kafka) — «произошло событие», много потребителей, replay. См. [kafka](kafka.md).
 - **Celery:** брокер (RabbitMQ/Redis), воркеры, `@app.task`, `apply_async(countdown/eta)`, `retry`, `acks_late=True` + идемпотентность (иначе at-most-once при падении воркера), `task_reject_on_worker_lost`, result backend (часто не нужен), Celery Beat для периодических, prefetch и `worker_concurrency`, routing по очередям (быстрые/медленные отдельно), таймауты (`soft_time_limit`). Sync по природе; async-таски — костыли.
 - **Async-альтернативы:** **Taskiq** (async-native, брокеры Redis/NATS/Kafka, интеграция с FastAPI/Depends), **arq** (asyncio + Redis, простой), **Dramatiq**, **RQ**. Для FastAPI-стека — Taskiq/arq логичнее, чем Celery.
-- **Гарантии:** at-least-once по умолчанию при правильной настройке → задачи идемпотентные ([[resilience-patterns]]). Дедупликация по ключу задачи в Redis/БД.
+- **Гарантии:** at-least-once по умолчанию при правильной настройке → задачи идемпотентные ([resilience-patterns](../30-backend-design/resilience-patterns.md)). Дедупликация по ключу задачи в Redis/БД.
 - **Ретраи:** с backoff, ограничением, разделением временных/постоянных ошибок; DLQ/failed-очередь с алертом.
 - **Наблюдаемость:** размер очереди, время ожидания, успех/ошибки, длительность — метрики и алерты; Flower для Celery.
 - **Постгрес как очередь:** таблица + `FOR UPDATE SKIP LOCKED` — надёжно и просто для малых/средних нагрузок, транзакционно с данными (нет outbox-проблемы). Знать как вариант.
@@ -53,7 +53,7 @@ updated: 2026-10-29
 
 ## Связи
 
-[[kafka]] · [[redis]] · [[resilience-patterns]] · [[fastapi]] · [[transactions-isolation-locks]]
+[kafka](kafka.md) · [redis](redis.md) · [resilience-patterns](../30-backend-design/resilience-patterns.md) · [fastapi](../30-backend-design/fastapi.md) · [transactions-isolation-locks](../20-databases/transactions-isolation-locks.md)
 
 ## Мои заметки
 

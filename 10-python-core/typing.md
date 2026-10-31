@@ -53,7 +53,7 @@ updated: 2026-10-29
 
 ## Связи
 
-[[data-model]] · [[fastapi]] · [[tooling]]
+[data-model](data-model.md) · [fastapi](../30-backend-design/fastapi.md) · [tooling](tooling.md)
 
 ## Мои заметки
 

@@ -23,9 +23,9 @@ updated: 2026-10-29
 - **Ошибки:** Sentry — исключения с контекстом, группировка, release tracking, performance.
 - **Алерты:** по симптомам (error rate, p99, доступность), не по причинам (CPU 80 %). Alertmanager → Telegram/PagerDuty. Избегать alert fatigue.
 - **SLI / SLO / error budget:** SLI — измеримый показатель (доля успешных запросов < 300 мс), SLO — цель (99.9 % за 30 дней), error budget — сколько можно «потратить». Алерты на скорость сгорания бюджета (burn rate).
-- **Health endpoints:** `/health/live`, `/health/ready` ([[kubernetes]]).
+- **Health endpoints:** `/health/live`, `/health/ready` ([kubernetes](kubernetes.md)).
 - **Расследование инцидента:** алерт → дашборд (RED) → трейсы медленных запросов → логи по trace_id → гипотеза → фикс → постмортем без обвинений (blameless), action items.
-- **Для LLM-сервисов:** дополнительно метрики токенов, стоимости, латентности модели, доли фолбэков ([[evals-cost-latency]]).
+- **Для LLM-сервисов:** дополнительно метрики токенов, стоимости, латентности модели, доли фолбэков ([evals-cost-latency](../70-llm-engineering/evals-cost-latency.md)).
 
 ## Вопросы с собесов
 
@@ -34,7 +34,7 @@ updated: 2026-10-29
 - [ ] Какие типы метрик в Prometheus и как считать p99? → *Counter/Gauge/Histogram; histogram_quantile*
 - [ ] Как пробрасываешь request_id/trace_id через async-код и между сервисами? → *contextvars, OTel propagation, заголовки*
 - [ ] Что такое SLO и error budget? → *цель на SLI; допустимый объём ошибок*
-- [ ] Расскажи про инцидент, который расследовал. → *[[stories]], история 1; по шагам*
+- [ ] Расскажи про инцидент, который расследовал. → *[stories](../00-strategy/stories.md), история 1; по шагам*
 - [ ] Как настраиваешь алерты, чтобы они не доставали? → *по симптомам, burn rate, severity*
 - [ ] Как логировать в async-сервисе, чтобы не тормозить? → *stdout, неблокирующий handler/QueueHandler, без лишнего в hot path*
 - [ ] Что такое OpenTelemetry и почему он, а не vendor SDK? → *стандарт, автоинструментирование, vendor-neutral*
@@ -56,7 +56,7 @@ updated: 2026-10-29
 
 ## Связи
 
-[[kubernetes]] · [[resilience-patterns]] · [[memory-performance]] · [[fastapi]] · [[evals-cost-latency]] · [[stories]]
+[kubernetes](kubernetes.md) · [resilience-patterns](../30-backend-design/resilience-patterns.md) · [memory-performance](../10-python-core/memory-performance.md) · [fastapi](../30-backend-design/fastapi.md) · [evals-cost-latency](../70-llm-engineering/evals-cost-latency.md) · [stories](../00-strategy/stories.md)
 
 ## Мои заметки
 

@@ -51,7 +51,7 @@ updated: 2026-10-29
 
 ## Связи
 
-[[asyncio]] · [[memory-performance]]
+[asyncio](asyncio.md) · [memory-performance](memory-performance.md)
 
 ## Мои заметки
 

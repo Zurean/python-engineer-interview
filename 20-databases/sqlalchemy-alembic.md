@@ -22,7 +22,7 @@ updated: 2026-10-29
 - **Async:** `create_async_engine` (драйвер `asyncpg` или `psycopg[async]`), `AsyncSession`, `async_sessionmaker`, `await session.execute()`. Lazy load в async невозможен без `await` → `selectinload`/`joinedload` или `AsyncAttrs`.
 - **Сессия на запрос в FastAPI:** dependency с `async with session_maker() as session: yield session`; коммит явно в сервисе или в dependency (`session.begin()`), роллбек на исключении.
 - **Транзакция:** `async with session.begin():` — commit при выходе, rollback при ошибке. `expire_on_commit=False` для async (иначе доступ к атрибутам после commit = implicit IO).
-- **Загрузка связей:** `selectinload` (второй запрос `IN`, хорошо для коллекций), `joinedload` (JOIN, для one-to-one/many-to-one), `lazy='raise'` чтобы ловить N+1 в тестах. Подробнее — [[query-optimization-n-plus-1]].
+- **Загрузка связей:** `selectinload` (второй запрос `IN`, хорошо для коллекций), `joinedload` (JOIN, для one-to-one/many-to-one), `lazy='raise'` чтобы ловить N+1 в тестах. Подробнее — [query-optimization-n-plus-1](query-optimization-n-plus-1.md).
 - **Identity map**, `flush` vs `commit`, `refresh`, `merge`; unit of work.
 - **Bulk:** `session.execute(insert(T), [dicts])`, `insert().on_conflict_do_update()` (upsert, из `sqlalchemy.dialects.postgresql`).
 
@@ -31,7 +31,7 @@ updated: 2026-10-29
 - Autogenerate не видит всё (переименования трактует как drop+add, не видит изменения server_default, некоторые типы) → ревьюить миграции руками всегда.
 - Миграции в CI/деплое: запускать до старта новой версии (init-container/job), один процесс, не из каждого пода.
 - Ветвление ревизий (`heads`, `merge`), данные-миграции отдельно от схемы.
-- Безопасные миграции без даунтайма — [[zero-downtime-migrations]].
+- Безопасные миграции без даунтайма — [zero-downtime-migrations](zero-downtime-migrations.md).
 
 ## Вопросы с собесов
 
@@ -63,7 +63,7 @@ updated: 2026-10-29
 
 ## Связи
 
-[[fastapi]] · [[query-optimization-n-plus-1]] · [[zero-downtime-migrations]] · [[transactions-isolation-locks]] · [[integration-testing]]
+[fastapi](../30-backend-design/fastapi.md) · [query-optimization-n-plus-1](query-optimization-n-plus-1.md) · [zero-downtime-migrations](zero-downtime-migrations.md) · [transactions-isolation-locks](transactions-isolation-locks.md) · [integration-testing](../60-testing/integration-testing.md)
 
 ## Мои заметки
 
