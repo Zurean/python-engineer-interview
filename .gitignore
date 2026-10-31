@@ -1,6 +1,16 @@
-.obsidian/workspace.json
-.obsidian/workspace-mobile.json
-.obsidian/cache
+# Локальное состояние Obsidian и установленные плагины
+.obsidian/
+
+# Локальные файлы Obsidian Copilot и агентные навыки
+.agents/
+.copilot/
+copilot/
+
+# Случайные пустые заготовки Obsidian
+/Без названия.base
+/Без названия.canvas
+
+# Корзина и системные файлы
 .trash/
 .DS_Store
 Thumbs.db
